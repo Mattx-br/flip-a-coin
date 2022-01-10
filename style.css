@@ -1,0 +1,112 @@
+:root {
+    --background: #176eb1;
+    --branco: #f6f6f6;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        var(--background) 50%,
+        var(--branco) 50%
+    ) fixed;
+}
+
+.container {
+    width: 80vmin;
+    background-color: var(--branco);
+    padding: 50px;
+
+    /* deixando no centro */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    /* /deixando no centro */
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px rgba(60,60,60, 0.5);
+
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.wrapper button {
+    width: 30%;
+    background-color: var(--background);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    color: var(--branco);
+}
+
+
+.stats {
+    text-align: right;
+    color: #101020;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.coin{
+    border:  1px solid black;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: 50px auto;
+
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    
+    animation: spin-tails 3s forwards;
+}
+
+.coin img {
+    height: 150px;
+    width: 150px;
+}
+
+.heads, .tails {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.tails {
+    transform: rotateX(180deg);
+}
+
+@keyframes spin-tails {
+    0% 
+    {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(1980deg);
+    }
+}
+
+
+/* referencias */
+
+/* animação keyframes CSS */
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
